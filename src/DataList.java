@@ -37,8 +37,10 @@ public class DataList {
     // Iterasi pada setiap elemen type
     for (Data data : dataList) {
         // Method pembanding data dengan kata kunci
-        if (data.getDescription().equals(key)) {
-            System.out.println("Data " + key + " ditemukan pada indeks ke " + data);
+        if (data.getDescription().equalsIgnoreCase(key)) {
+            System.out.println("\nData Ditemukan!");
+            System.out.println("Nomor\t\t: "+ data.getValue() );
+            System.out.println("Deskripsi\t: "+ data.getDescription() +"\n");
             return data;
         }
     }
@@ -51,7 +53,9 @@ public Data linearSearch(int key) {
     for (Data data : dataList) {
         // Method pembanding data dengan kata kunci
         if (data.getValue() == key) {
-            System.out.println("Data " + key + " ditemukan pada indeks ke " + data);
+            System.out.println("\nData Ditemukan!");
+            System.out.println("Nomor\t\t: "+ data.getValue() );
+            System.out.println("Deskripsi\t: "+ data.getDescription() +"\n");
             return data;
         }
     }
@@ -74,7 +78,9 @@ public Data binarySearch(int key) {
 
         // Membandingkan value dengan key
         if (midData.getValue() == key) {
-            System.out.println("Data " + key + " berada pada indeks ke " + mid + " dengan isi " + midData.getDescription());
+            System.out.println("\nData Ditemukan!");
+            System.out.println("Nomor\t\t: "+ midData.getValue() );
+            System.out.println("Deskripsi\t: "+ midData.getDescription() +"\n");
             return midData;
         } else if (midData.getValue() < key) {
             // Cari di ruas kanan
