@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DataList dataList = new DataList(); // Membuat objek untuk menyimpan daftar data
+        DataList dataList = new DataList(); 
 
         boolean isRunning = true;
         while (isRunning) {
@@ -14,21 +14,21 @@ public class Main {
             System.out.println("4. Keluar");
             System.out.print("Pilih menu: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Mengonsumsi karakter newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
                     System.out.print("Masukkan nilai: ");
                     int value = scanner.nextInt();
-                    scanner.nextLine(); // Mengonsumsi karakter newline
+                    scanner.nextLine(); 
                     System.out.print("Masukkan deskripsi: ");
                     String description = scanner.nextLine();
                     Data newData = new Data(value, description);
-                    dataList.addData(newData); // Menambahkan data baru ke dalam daftar
+                    dataList.addData(newData); 
                     System.out.println("Data telah ditambahkan.");
                     break;
                 case 2:
-                    dataList.bubbleSort(); // Mengurutkan data menggunakan algoritma bubble sort
+                    dataList.bubbleSort(); 
                     System.out.println("Data setelah diurutkan:");
                     for (Data data : dataList.getDataList()) {
                         System.out.println("Nilai: " + data.getValue() + ", Deskripsi: " + data.getDescription());
@@ -37,7 +37,7 @@ public class Main {
                 case 3:
                     System.out.print("Masukkan nilai yang ingin dicari: ");
                     int searchValue = scanner.nextInt();
-                    scanner.nextLine(); // Mengonsumsi karakter newline
+                    scanner.nextLine(); 
                     boolean found = false;
                     for (Data data : dataList.getDataList()) {
                         if (data.getValue() == searchValue) {
@@ -51,7 +51,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    isRunning = false; // Keluar dari loop while dan program
+                    isRunning = false; 
                     System.out.println("Terima kasih!");
                     break;
                 default:
@@ -59,6 +59,6 @@ public class Main {
             }
         }
 
-        scanner.close(); // Menutup Scanner
+        scanner.close(); 
     }
 }
