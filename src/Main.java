@@ -100,24 +100,29 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("\n PROSES TESTING...");
+
+                    // hitung waktu eksekusi linear search
+                    // Algoritma Linear Search memiliki kompleksitas waktu O(n), di mana n adalah jumlah elemen dalam daftar.
                     long startTimeLinearSearch = System.nanoTime();
                     Data ls = dataList.linearSearch(18);
                     long endTimeLinearSearch = System.nanoTime();
                     long durationLinearSearch = (endTimeLinearSearch - startTimeLinearSearch);
 
-                    // Measure execution time of binary search
+                    // hitung waktu eksekusi binary search
+                    // Algoritma pencarian biner memiliki kompleksitas waktu O(log n) setelah daftar diurutkan, di mana n adalah jumlah elemen dalam daftar.
                     long startTimeBinarySearch = System.nanoTime();
                     Data bs = dataList.binarySearch(18);
                     long endTimeBinarySearch = System.nanoTime();
                     long durationBinarySearch = (endTimeBinarySearch - startTimeBinarySearch);
 
-                    // Measure execution time of bubble sort
+                    // hitung waktu eksekusi bubble sort
+                    // Algoritma Bubble Sort memiliki kompleksitas waktu O(n^2), di mana n adalah jumlah elemen dalam daftar.
                     long startTimeBubbleSort = System.nanoTime();
                     dataList.bubbleSort();
                     long endTimeBubbleSort = System.nanoTime();
                     long durationBubbleSort = (endTimeBubbleSort - startTimeBubbleSort);
 
-                    // Output the durations
+                    // Output
                     System.out.println("Kecepatan Eksekusi Algoritma Linear Search: " + durationLinearSearch + " nanodetik");
                     System.out.println("Kecepatan Eksekusi Algoritma Binary Search: " + durationBinarySearch + " nanodetik");
                     System.out.println("Kecepatan Eksekusi Algoritma Bubble Sort: " + durationBubbleSort + " nanodetik");
